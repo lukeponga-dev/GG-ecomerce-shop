@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>GammaGoblin Hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Load Inter Font from Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Load Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Configure Tailwind to use the 'Inter' font and a dark/vibrant theme -->
+  <script>
+      tailwind.config = {
+          theme: {
+              extend: {
+                  colors: {
+                      'gg-dark': '#111827',
+                      'gg-accent-orange': '#F97316',
+                      'gg-accent-purple': '#8B5CF6',
+                      'gg-highlight-blue': '#3B82F6',
+                      'gg-card': '#1F2937',
+                  },
+                  fontFamily: {
+                      sans: ['Inter', 'sans-serif'], 
+                  },
+              }
+          }
+      }
+  </script>
+  <style>
+      /* Custom styles for grid pattern effect */
+      .blotter-pattern {
+          background-image: repeating-linear-gradient(
+              45deg,
+              transparent,
+              transparent 10px,
+              rgba(255, 255, 255, 0.05) 10px,
+              rgba(255, 255, 255, 0.05) 11px
+          );
+      }
+      .card-glow {
+          box-shadow: 0 0 15px rgba(139, 92, 246, 0.5); /* Purple glow effect */
+          transition: transform 0.3s, box-shadow 0.3s;
+      }
+      .card-glow:hover {
+          transform: translateY(-5px);
+          box-shadow: 0 10px 30px rgba(139, 92, 246, 0.8);
+      }
+  </style>
+</head>
+<body class="bg-gg-dark text-gray-100 min-h-screen blotter-pattern">
+  <script type="importmap">
+  {
+    "imports": {
+      "@google/genai": "https://esm.sh/@google/genai@^0.14.0",
+      "react": "https://esm.sh/react@^19.0.0-beta-0",
+      "react-dom/client": "https://esm.sh/react-dom@^19.0.0-beta-0/client",
+      "react/": "https://aistudiocdn.com/react@^19.2.0/",
+      "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/"
+    }
+  }
+  </script>
+  <div id="root"></div>
+  <script type="module" src="index.tsx"></script>
+</body>
+</html>
